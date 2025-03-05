@@ -1,1 +1,1 @@
-docker ps
+docker info
