@@ -1,0 +1,62 @@
+{
+    "name": "RIA-Ansible_terraform",
+    "path": "/User/Asset/RIA-Ansible_terraform",
+    "platform": "node",
+    "hash": "dh+zznAAOvTq53W251pz4WdhyYCdg6TFwwCzKBdlsp8=",
+    "blocks": [
+        {
+            "action": "system/Ansible/Playbook",
+            "name": "Ansible_1",
+            "inputs": [
+                {
+                    "name": "authKey",
+                    "value": "\"admin/terra_ansi\""
+                },
+                {
+                    "name": "playbook",
+                    "value": "`---\n- name: Provision Infra Through Terraform\n  hosts: all\n  remote_user: rnauser\n  tasks:\n    - name: Check Terraform Directory\n      stat:\n        path: /home/rnauser/terraform-basic\n      register: file_present\n\n    - name: Clone the git repository\n      shell: \"git clone https://github.com/SahithRShetty/terraform-basic.git /home/rnauser/terraform-basic\"\n      when: not file_present.stat.exists\n\n    - name: Configure AWS Profile - Set Access Key\n      shell: \"aws configure set aws_access_key_id <access key her > --profile ria\"\n\n    - name: Configure AWS Profile - Set Secret Key\n      shell: \"aws configure set aws_secret_access_key <secert key here> --profile ria\"\n\n    - name: Configure AWS Profile - Set Default Region\n      shell: \"aws configure set region us-east-1 --profile ria\"\n\n    - name: Initialise Terraform repository\n      shell: |\n        cd /home/rnauser/terraform-basic\n        terraform init\n\n    - name: Plan terraform Provisoning\"\n      shell: |\n        cd /home/rnauser/terraform-basic\n        terraform plan -out=tfplan.out\n\n    - name: Apply terraform Provisoning\"\n      shell: |\n        cd /home/rnauser/terraform-basic\n        terraform apply tfplan.out\n\n    - name: Output terraform Provisoned Resource\"\n      shell: |\n        cd /home/rnauser/terraform-basic\n        terraform output\n      register: terraform_output\n    \n    - name: Display AWS CLI version\n      debug:\n        msg: \"{{ terraform_output }}\"`"
+                }
+            ]
+        },
+        {
+            "action": "assign",
+            "name": "Assign_1",
+            "variable": "$result",
+            "value": "$Ansible_1.result"
+        }
+    ],
+    "variables": [
+        {
+            "name": "result",
+            "required": false,
+            "isInput": false,
+            "isOutput": true,
+            "level": "INTERMEDIATE",
+            "type": {
+                "type": "any"
+            },
+            "value": "\"\""
+        },
+        {
+            "name": "gitrepo",
+            "required": false,
+            "isInput": true,
+            "isOutput": false,
+            "level": "INTERMEDIATE",
+            "type": {
+                "type": "string"
+            },
+            "value": "\"\""
+        }
+    ],
+    "meta": {
+        "version": 5,
+        "layout": "flow",
+        "workerGroup": "default",
+        "created": 1741774114496,
+        "lastUpdated": 1742552849433,
+        "updatedByUsername": "admin",
+        "numberOfBlocks": 2,
+        "description": "This workflow will use ansible play book to execute the Terraform script stored in git. the script creates EC2 instance in AWS account, the account information is in git repo"
+    }
+}
