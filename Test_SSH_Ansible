@@ -1,0 +1,6 @@
+---
+- name: Test SSH Connection to the remote host
+  hosts: canary
+  tasks:
+    - name: Ping the remote host to test SSH connection
+      ansible.builtin.ping:
