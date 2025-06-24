@@ -1,0 +1,47 @@
+site_id: mso-northwest-001
+rack_id: rack-03
+submitted_by: field-tech-a1
+submission_time: "2025-06-30T13:45:00Z"
+
+servers:
+  - hostname: ims-cp-01
+    bmc:
+      ip: 10.20.30.11
+      username: admin
+      password: encrypted:XYZ123==
+      protocol: redfish
+    nics:
+      - name: eno1
+        mac: "00:1a:2b:3c:4d:5e"
+        expected_link: tor-a
+        expected_port: Eth1/1
+      - name: eno2
+        mac: "00:1a:2b:3c:4d:5f"
+        expected_link: tor-b
+        expected_port: Eth1/2
+
+  - hostname: ims-worker-01
+    bmc:
+      ip: 10.20.30.12
+      username: admin
+      password: encrypted:XYZ456==
+      protocol: redfish
+    nics:
+      - name: eno1
+        mac: "00:1a:2b:3c:4d:6e"
+        expected_link: tor-a
+        expected_port: Eth2/1
+      - name: eno2
+        mac: "00:1a:2b:3c:4d:6f"
+        expected_link: tor-b
+        expected_port: Eth2/2
+
+switches:
+  - name: tor-a
+    mgmt_ip: 192.168.10.1
+    vendor: Cisco
+    model: Nexus-9000
+  - name: tor-b
+    mgmt_ip: 192.168.10.2
+    vendor: Cisco
+    model: Nexus-9000
