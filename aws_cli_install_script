@@ -1,0 +1,20 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "Running user data script"
+
+#--- DOWNLOAD PALMCTL VIA S3 (FOR BETA ONLY) ---
+cd /root
+
+# Update and install dependencies
+echo "running apt-get update"
+apt-get update -y
+
+echo "running apt-get install curl unzip jq"
+apt-get install -y curl unzip jq
+
+# Get the AWS CLI
+echo "installing the aws CLI"
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
