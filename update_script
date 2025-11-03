@@ -6,13 +6,13 @@ sudo su
 cd /root
 
 # Update and install dependencies
-###apt-get update -y
+apt-get update -y
 ###echo "running apt-get update"
-#curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-#unzip awscliv2.zip
-#sudo ./aws/install
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 
 #sudo snap install aws-cli
 
-echo "running apt-get update"
+#echo "running apt-get update"
 echo "aws install completed"
