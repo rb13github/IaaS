@@ -7,8 +7,8 @@ set -euo pipefail
 #cd /root
 
 # Update and install dependencies
-#apt-get update -y
-#apt-get install -y curl unzip jq
+apt-get update -y
+apt-get install -y curl unzip jq
 
 #RB- added
 #sudo apt install unzip
