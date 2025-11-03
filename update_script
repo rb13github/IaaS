@@ -2,7 +2,7 @@
 set -euo pipefail
 
 #--- change to root ---
-#sudo su 
+#sudo su # using this gives time out error for the Concert workflow SSH action
 #RB-commented
 #cd /root
 
@@ -14,7 +14,7 @@ set -euo pipefail
 #sudo apt install unzip
 ###echo "running apt-get update"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-#unzip awscliv2.zip
+unzip awscliv2.zip
 #sudo ./aws/install
 ls
 #sudo snap install aws-cli
