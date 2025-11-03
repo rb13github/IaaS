@@ -8,6 +8,8 @@ sudo su
 
 # Update and install dependencies
 apt-get update -y
+apt-get install -y curl unzip jq
+
 #RB- added
 sudo apt install unzip
 ###echo "running apt-get update"
