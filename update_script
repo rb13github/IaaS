@@ -3,7 +3,7 @@ set -euo pipefail
 
 #--- change to root ---
 sudo su 
-cd /root
+#cd /root
 
 # Update and install dependencies
 apt-get update -y
