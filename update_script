@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+#--- change to root ---
+cd sudo /root
+
+# Update and install dependencies
+apt-get update -y
+echo "running apt-get update"
