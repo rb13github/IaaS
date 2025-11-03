@@ -2,7 +2,7 @@
 set -euo pipefail
 
 #--- change to root ---
-sudo su 
+#sudo su 
 #RB-commented
 #cd /root
 
