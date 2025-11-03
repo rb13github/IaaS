@@ -2,6 +2,6 @@
 sudo apt-get update -y
 #sudo apt-get install -y httpd #for
 sudo apt-get install -y apache2
-sudo systemctl start httpd.service
-sudo systemctl enable httpd.service
+sudo systemctl start apache2
+sudo systemctl enable apache2
 echo "Hello from EC2 user data!" > /var/www/html/index.html
