@@ -17,6 +17,7 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 ls
+aws --version
 #sudo snap install aws-cli
 
 #echo "running apt-get update"
