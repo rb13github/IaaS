@@ -9,5 +9,7 @@ apt-get install -y curl unzip jq
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 ./aws/install
-ls
-aws --version
+apt-get install -y apache2
+systemctl start apache2
+systemctl enable apache2
+chown -R www-data:www-data /var/www/html
