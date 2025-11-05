@@ -44,19 +44,3 @@ deploy_gateway_config:
     ip_address_pool: "$SECONDARY_IPS_CIDR"
 EOF
 
-echo "install vm-gateway done"
-OUTER_EOF
-)
-
-  BLOCK_DEVICE_MAPPING=$(cat <<EOF
-[
-  {
-    "DeviceName": "/dev/sda1",
-    "Ebs": {
-      "VolumeSize": $EC2_STORAGE_GB,
-      "VolumeType": "gp3",
-      "DeleteOnTermination": true
-    }
-  }
-]
-EOF
