@@ -1,0 +1,8 @@
+#for intalling apache on ubuntu, steps will be different for linux/redhat
+#!/bin/bash
+set -euo pipefail
+cd /root
+apt-get install -y apache2
+systemctl start apache2
+systemctl enable apache2
+chown -R www-data:www-data /var/www/html
