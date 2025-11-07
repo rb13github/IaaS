@@ -4,7 +4,7 @@ set -euo pipefail
 echo "Running user data script"
 
 #--- change to root ---
-cd sudo /root
+cd /root
 
 # Update and install dependencies
 echo "running apt-get update"
