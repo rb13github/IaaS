@@ -1,4 +1,4 @@
-﻿DeviceName,ObjectName,time,bandwidth,packet_loss
+﻿DeviceName,ObjectName,timestamp_object,bandwidth_indicator,packet_loss_indicator
 """R1""","interface_R1_FastEthernet01_to_R2_FastEthernet10""",6:00,650,0
 """R1""","interface_R1_FastEthernet01_to_R2_FastEthernet10""",6:15,670,0
 """R1""","interface_R1_FastEthernet01_to_R2_FastEthernet10""",6:30,675,0
@@ -86,4 +86,5 @@
 """R3""","""interface_R3_FastEthernet01_to_R4_FastEthernet10""",16:15,790,0
 
 """R3""","""interface_R3_FastEthernet01_to_R4_FastEthernet10""",16:30,780,0
+
 
