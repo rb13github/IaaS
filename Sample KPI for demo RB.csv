@@ -85,4 +85,3 @@ DeviceName,ObjectName,timestamp_object,bandwidth_indicator,packet_loss_indicator
 "R3","interface_R3_FastEthernet01_to_R4_FastEthernet10",16:00,780,0
 "R3","interface_R3_FastEthernet01_to_R4_FastEthernet10",16:15,790,0
 "R3","interface_R3_FastEthernet01_to_R4_FastEthernet10",16:30,780,0
-
